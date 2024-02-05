@@ -1,31 +1,54 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using graphPlotter.Models;
-
-namespace graphPlotter.Controllers;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using MathNet.Numerics;
+using MathNet.Numerics.Optimization;
+using MathNet.Numerics.Optimization.ObjectiveFunctions;
+using graphPlotter;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+  private readonly CurveFitContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+  public HomeController(CurveFitContext context)
+  {
+    _context = context;
+  }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+  public IActionResult Index()
+  {
+    var achievedPlots = _context.Plots.ToList();
+    return View(achievedPlots);
+  }
 
-    public IActionResult Privacy()
+  [HttpPost]
+  public IActionResult AddPoint(Point point)
+  {
+    if (ModelState.IsValid)
     {
-        return View();
+      _context.Points.Add(point);
+      _context.SaveChanges();
     }
+    return RedirectToAction("Index");
+  }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+  [HttpPost]
+  public IActionResult CalculateBestFit(int degree)
+  {
+    var points = _context.Points.ToList();
+    var xData = points.Select(p => p.X).ToArray();
+    var yData = points.Select(p => p.Y).ToArray();
+
+    var coefficients = Fit.Polynomial(xData, yData, degree);
+    var equation = string.Join(" + ", coefficients.Select((c, i) => $"{c:F2}x^{degree - i}"));
+
+    var plotImage = /* Generate plot image using a chart library */;
+    var plot = new Plot { Equation = equation, PlotImage = plotImage };
+
+    _context.Plots.Add(plot);
+    _context.SaveChanges();
+
+    return RedirectToAction("Index");
+  }
 }

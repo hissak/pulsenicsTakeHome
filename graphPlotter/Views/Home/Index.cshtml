@@ -1,8 +1,19 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model List<Plot>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h2>Entered Points</h2>
+<form asp-action="AddPoint" method="post">
+  <label for="X">X:</label>
+  <input type="number" name="X" required>
+  <label for="Y">Y:</label>
+  <input type="number" name="Y" required>
+  <button type="submit">Add Point</button>
+</form>
+
+<h2>Achieved Plots</h2>
+@foreach (var plot in Model)
+{
+  <div>
+  <p>Equation: @plot.Equation</p>
+  <img src="data:image/png;base64,@Convert.ToBase64String(plot.PlotImage)" alt="Plot Image">
 </div>
+}

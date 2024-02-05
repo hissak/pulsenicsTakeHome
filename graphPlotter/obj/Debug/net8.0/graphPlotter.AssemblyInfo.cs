@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("graphPlotter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02f7ba42c62de761f09618d35fe55760a04e3111")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4acc8293dea3f6e21934e9053bcad766dbbc6256")]
 [assembly: System.Reflection.AssemblyProductAttribute("graphPlotter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("graphPlotter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
