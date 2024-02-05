@@ -17,3 +17,36 @@
   <img src="data:image/png;base64,@Convert.ToBase64String(plot.PlotImage)" alt="Plot Image">
 </div>
 }
+
+@foreach (var plot in Model)
+{
+  <div>
+  <p>Equation: @plot.Equation</p>
+  <canvas id="chart@plot.ID" width="400" height="200"></canvas>
+</div>
+
+  <script>
+  var ctx = document.getElementById('chart@plot.ID').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: /* Your X-axis labels here */,
+      datasets: [{
+        label: 'Data Points',
+        data: /* Your Y-axis data points here */,
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        x: [{
+          type: 'linear',
+          position: 'bottom'
+        }]
+      }
+    }
+  });
+</script>
+}
