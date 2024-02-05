@@ -4,51 +4,60 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using graphPlotter.Data;
 
-
-public class Startup
+namespace graphPlotter
 {
-  public IConfiguration Configuration { get; }
-
-  public Startup(IConfiguration configuration)
+  public class Startup
   {
-    Configuration = configuration;
-  }
+    public IConfiguration Configuration { get; }
 
-  public void ConfigureServices(IServiceCollection services)
-  {
-    services.AddDbContext<CurveFitContext>(options =>
-        options.UseSqlite("Data Source=CurveFitDB.sqlite"));
-  }
-
-  // public void ConfigureServices(IServiceCollection services)
-  // {
-  //   services.AddMvc();
-  // }
-
-  public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-  {
-    if (env.IsDevelopment())
+    public Startup(IConfiguration configuration)
     {
-      app.UseDeveloperExceptionPage();
-    }
-    else
-    {
-      app.UseExceptionHandler("/Home/Error");
-      app.UseHsts();
+      Configuration = configuration;
     }
 
-    app.UseHttpsRedirection();
-    app.UseStaticFiles();
-
-    app.UseRouting();
-
-    app.UseEndpoints(endpoints =>
+    public void ConfigureServices(IServiceCollection services)
     {
-      endpoints.MapControllerRoute(
-              name: "default",
-              pattern: "{controller=Home}/{action=Index}/{id?}");
-    });
+      services.AddMvc()
+        .AddControllersAsServices();
+      // Register the DbContext with the DI container
+      services.AddDbContext<CurveFitContext>(options =>
+          options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+      services.AddScoped<DbContext, CurveFitContext>();
+
+      // Add framework services.
+      services.AddControllersWithViews();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+      if (env.IsDevelopment())
+      {
+        app.UseDeveloperExceptionPage();
+      }
+      else
+      {
+        app.UseExceptionHandler("/Home/Error");
+        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+        app.UseHsts();
+      }
+
+      // Uncomment below if you want to work with HTTPS redirection
+      // app.UseHttpsRedirection();
+      app.UseStaticFiles();
+
+      app.UseRouting();
+
+      app.UseAuthorization();
+
+      app.UseEndpoints(endpoints =>
+      {
+        endpoints.MapControllerRoute(
+                  name: "default",
+                  pattern: "{controller=Home}/{action=Index}/{id?}");
+      });
+    }
   }
 }
