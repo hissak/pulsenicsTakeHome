@@ -21,11 +21,12 @@ namespace graphPlotter
     {
       services.AddMvc()
         .AddControllersAsServices();
+      services.AddScoped<DbContext, CurveFitContext>();
+
       // Register the DbContext with the DI container
       services.AddDbContext<CurveFitContext>(options =>
           options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-      services.AddScoped<DbContext, CurveFitContext>();
 
       // Add framework services.
       services.AddControllersWithViews();
