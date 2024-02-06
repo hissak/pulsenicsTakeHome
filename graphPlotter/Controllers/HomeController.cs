@@ -6,9 +6,9 @@ namespace graphPlotter.Controllers
 {
   public class HomeController : Controller
   {
-    private readonly DbContext _context;
+    private readonly CurveFitContext _context;
 
-    public HomeController(DbContext context)
+    public HomeController(CurveFitContext context)
     {
       _context = context;
     }

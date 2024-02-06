@@ -27,6 +27,8 @@ namespace graphPlotter
       services.AddDbContext<CurveFitContext>(options =>
           options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
+      services.AddScoped<DbContext, CurveFitContext>();
+
 
       // Add framework services.
       services.AddControllersWithViews();
