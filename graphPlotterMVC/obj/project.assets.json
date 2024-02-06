@@ -7257,9 +7257,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter/graphPlotter.csproj",
-      "projectName": "graphPlotter",
-      "projectPath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter/graphPlotter.csproj",
+      "projectUniqueName": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter/graphPlotter MVC Build.csproj",
+      "projectName": "graphPlotter MVC Build",
+      "projectPath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter/graphPlotter MVC Build.csproj",
       "packagesPath": "/Users/hassanissak/.nuget/packages/",
       "outputPath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter/obj/",
       "projectStyle": "PackageReference",

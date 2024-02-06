@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ouU08U/jBPlhMO/6Nuql8ilYTvjWo0n+mon4t1yraUGlpdfAmqKG96BcjisznNVPjhPPrVDjb8xiE2aBt3EiuQ==",
+  "dgSpecHash": "9q+ygQY7OlxPY1aAX7QiAc0u658XPgcp+tj4gdc9fUaO5yueAtj09Zaggbawd7NN2J2GzMMkdEq9XJx62tiPbA==",
   "success": true,
-  "projectFilePath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter/graphPlotter.csproj",
+  "projectFilePath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter/graphPlotter MVC Build.csproj",
   "expectedPackageFiles": [
     "/Users/hassanissak/.nuget/packages/chartjs.blazor/1.1.0/chartjs.blazor.1.1.0.nupkg.sha512",
     "/Users/hassanissak/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
