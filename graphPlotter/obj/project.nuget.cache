@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4hmJ7SwjePDGbGRRO48Toe6OdMHUQmd+OdtfFT1us8JxVKO0kUxwKEupe+iM2VHAnMvjKvId5A99IJfa4WgMRw==",
+  "dgSpecHash": "ouU08U/jBPlhMO/6Nuql8ilYTvjWo0n+mon4t1yraUGlpdfAmqKG96BcjisznNVPjhPPrVDjb8xiE2aBt3EiuQ==",
   "success": true,
   "projectFilePath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter/graphPlotter.csproj",
   "expectedPackageFiles": [
@@ -121,6 +121,10 @@
     "/Users/hassanissak/.nuget/packages/nuget.projectmodel/6.3.1/nuget.projectmodel.6.3.1.nupkg.sha512",
     "/Users/hassanissak/.nuget/packages/nuget.protocol/6.3.1/nuget.protocol.6.3.1.nupkg.sha512",
     "/Users/hassanissak/.nuget/packages/nuget.versioning/6.3.1/nuget.versioning.6.3.1.nupkg.sha512",
+    "/Users/hassanissak/.nuget/packages/oxyplot.core/2.1.2/oxyplot.core.2.1.2.nupkg.sha512",
+    "/Users/hassanissak/.nuget/packages/oxyplot.windowsforms/2.1.2/oxyplot.windowsforms.2.1.2.nupkg.sha512",
+    "/Users/hassanissak/.nuget/packages/oxyplot.wpf/2.1.2/oxyplot.wpf.2.1.2.nupkg.sha512",
+    "/Users/hassanissak/.nuget/packages/oxyplot.wpf.shared/2.1.2/oxyplot.wpf.shared.2.1.2.nupkg.sha512",
     "/Users/hassanissak/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.6/sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "/Users/hassanissak/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
     "/Users/hassanissak/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",

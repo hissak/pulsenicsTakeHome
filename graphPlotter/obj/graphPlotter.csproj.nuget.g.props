@@ -29,6 +29,7 @@
     <Import Project="$(NuGetPackageRoot)chartjs.blazor/1.1.0/buildTransitive/ChartJs.Blazor.props" Condition="Exists('$(NuGetPackageRoot)chartjs.blazor/1.1.0/buildTransitive/ChartJs.Blazor.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgOxyPlot_Wpf Condition=" '$(PkgOxyPlot_Wpf)' == '' ">/Users/hassanissak/.nuget/packages/oxyplot.wpf/2.1.2</PkgOxyPlot_Wpf>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/hassanissak/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">/Users/hassanissak/.nuget/packages/microsoft.codeanalysis.analyzerutilities/3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">/Users/hassanissak/.nuget/packages/microsoft.entityframeworkcore.tools/8.0.1</PkgMicrosoft_EntityFrameworkCore_Tools>
