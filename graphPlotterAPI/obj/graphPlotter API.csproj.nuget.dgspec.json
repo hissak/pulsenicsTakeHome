@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter API/graphPlotter API.csproj": {}
+    "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotterAPI/graphPlotter API.csproj": {}
   },
   "projects": {
-    "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter API/graphPlotter API.csproj": {
+    "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotterAPI/graphPlotter API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter API/graphPlotter API.csproj",
+        "projectUniqueName": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotterAPI/graphPlotter API.csproj",
         "projectName": "graphPlotter API",
-        "projectPath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter API/graphPlotter API.csproj",
+        "projectPath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotterAPI/graphPlotter API.csproj",
         "packagesPath": "/Users/hassanissak/.nuget/packages/",
-        "outputPath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotter API/obj/",
+        "outputPath": "/Users/hassanissak/Desktop/pulsenicsTakeHome/graphPlotterAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hassanissak/.nuget/NuGet/NuGet.Config"
@@ -39,6 +39,10 @@
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.1, )"
             },
